@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class CannonMove : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        
+        Vector3 MousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.x, Input.mousePosition.x));
+        this.transform.position = new Vector3(MousePosition.x, this.transform.position.y, this.transform.position.y);
     }
 }
