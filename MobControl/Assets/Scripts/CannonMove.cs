@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CannonMove : MonoBehaviour
 {
-    void Start()
-    {
-
-    }
+    private Touch touch;
+    [SerializeField] float Speed;
     void Update()
     {
-        Vector3 MousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.x, Input.mousePosition.x));
-        this.transform.position = new Vector3(MousePosition.x, this.transform.position.y, this.transform.position.y);
+        if (Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
+            {
+                transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * Speed,transform.position.y,transform.position.z);
+            }
+        }
     }
 }
