@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Insan : MonoBehaviour
+public class EnemyGiant : MonoBehaviour
 {
     [SerializeField] float Hiz;
+    public int Healt = 6;
     void Start()
     {
         StartCoroutine(Yurume());
@@ -12,10 +13,14 @@ public class Insan : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Hiz * Time.deltaTime);
+        if (Healt <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     IEnumerator Yurume()
     {
-        Hiz = 10;
+        Hiz = 7;
         yield return new WaitForSeconds(0.5f);
         Hiz = 3;
     }

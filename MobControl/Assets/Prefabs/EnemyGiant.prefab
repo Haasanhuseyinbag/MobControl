@@ -387,7 +387,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b2099fae8a045f344ba2d4f1816f568c, type: 2}
+  - {fileID: 2100000, guid: c25eb9fa873429f4d857be4615bfd43c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1894,10 +1894,10 @@ GameObject:
   - component: {fileID: 7051190945010230962}
   - component: {fileID: 7862076723258051778}
   - component: {fileID: -16260398230186313}
-  - component: {fileID: -8004283187152314529}
+  - component: {fileID: -2570631086849700110}
   m_Layer: 0
-  m_Name: Giant
-  m_TagString: PlayerGiant
+  m_Name: EnemyGiant
+  m_TagString: EnemyGiant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1967,7 +1967,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &-8004283187152314529
+--- !u!114 &-2570631086849700110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1976,11 +1976,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7862076723258051805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714aa9842371cb54db3e1f3f245f1a9b, type: 3}
+  m_Script: {fileID: 11500000, guid: e0fe5a1064ff3624da5e2ec6cd5f59c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Hiz: 0
-  Healt: 6
 --- !u!1 &7989346511723442054
 GameObject:
   m_ObjectHideFlags: 0
