@@ -15,8 +15,8 @@ public class Insan : MonoBehaviour
     }
     IEnumerator Yurume()
     {
-        Hiz = 7;
+        Hiz = 10;
         yield return new WaitForSeconds(0.5f);
-        Hiz = 2;
+        Hiz = 3;
     }
 }

@@ -414,7 +414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871165367}
   m_LocalRotation: {x: 0.3420201, y: -0, z: -0, w: 0.9396926}
-  m_LocalPosition: {x: -0, y: 34.4, z: -25}
+  m_LocalPosition: {x: -0, y: 45.4, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -860,8 +860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e85cc4cefe13647807cd928144ed60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Insan: {fileID: 4186616050093508945, guid: fe13ac184c715d74287c442ad1ff6f99, type: 3}
-  Dev: {fileID: 4224261296607323631, guid: 66f7513961ddd2548b3af220610733f0, type: 3}
+  Insan: {fileID: 7862076723258051805, guid: 4b978bcda0d241945bfed1f90e8d622d, type: 3}
+  Dev: {fileID: 7862076723258051805, guid: 97461e8fe9160bf4183b5fb2ea8e5ddd, type: 3}
   RayPoint: {fileID: 1778815631}
 --- !u!23 &5633830942379924786
 MeshRenderer:
