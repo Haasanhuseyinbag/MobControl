@@ -6,6 +6,11 @@ public class CloneGiant : MonoBehaviour
 {
     float Hiz = 3;
     public int Healt = 6;
+    GameManager manager;
+    void Start()
+    {
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     void Update()
     {
         transform.Translate(Vector3.forward * Hiz * Time.deltaTime);
@@ -34,6 +39,11 @@ public class CloneGiant : MonoBehaviour
                 Destroy(collision.gameObject);
                 Healt -= 3;
             }
+        }
+        if (collision.gameObject.tag == "DusmanKulesi")
+        {
+            collision.GetComponent<DusmanKulesi>().Healt -= 5;
+            Destroy(gameObject);
         }
     }
 }

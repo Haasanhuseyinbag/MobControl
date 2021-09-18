@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class DusmanKulesi : MonoBehaviour
 {
+    public int Healt;
+    [SerializeField] TextMesh HealtText;
     [SerializeField] GameObject Insan, Dev;
     [SerializeField] Transform RayPoint;
-    [SerializeField] float FireRateMin,FireRateMax;
+    [SerializeField] float FireRateMin, FireRateMax;
     int AtilanInsanSayisi = 0;
     float FireRateTimer, FireRate;
     int DevAtilmaZamani;
+    GameManager manager;
+    private void Start()
+    {
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     void Update()
     {
+        HealtText.text = Healt.ToString();
+        if (Healt <= 0)
+        {
+            manager.Win();
+            HealtText.text = "0";
+        }
         if (Time.time > FireRateTimer)
         {
             Shot();
@@ -29,6 +42,6 @@ public class DusmanKulesi : MonoBehaviour
         else
             Instantiate(Insan, RayPoint.position, new Quaternion(0, 180, 0, transform.rotation.w));
         FireRate = Random.Range(FireRateMin, FireRateMax);
-        DevAtilmaZamani = Random.Range(5, 8);
+        DevAtilmaZamani = Random.Range(7, 10);
     }
 }

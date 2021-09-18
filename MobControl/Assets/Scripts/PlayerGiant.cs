@@ -6,9 +6,11 @@ public class PlayerGiant : MonoBehaviour
 {
     [SerializeField] float Hiz;
     public int Healt = 6;
+    GameManager manager;
     void Start()
     {
         StartCoroutine(Yurume());
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void Update()
     {
@@ -16,7 +18,7 @@ public class PlayerGiant : MonoBehaviour
         if (Healt <= 0)
         {
             Destroy(gameObject);
-        }   
+        }
     }
     IEnumerator Yurume()
     {
@@ -44,6 +46,11 @@ public class PlayerGiant : MonoBehaviour
                 Destroy(collision.gameObject);
                 Healt -= 3;
             }
+        }
+        if (collision.gameObject.tag == "DusmanKulesi")
+        {
+            collision.GetComponent<DusmanKulesi>().Healt -= 5;
+            Destroy(gameObject);
         }
     }
 }

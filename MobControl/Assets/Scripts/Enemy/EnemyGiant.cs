@@ -6,9 +6,11 @@ public class EnemyGiant : MonoBehaviour
 {
     [SerializeField] float Hiz;
     public int Healt = 6;
+    GameManager manager;
     void Start()
     {
         StartCoroutine(Yurume());
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void Update()
     {
@@ -23,5 +25,10 @@ public class EnemyGiant : MonoBehaviour
         Hiz = 7;
         yield return new WaitForSeconds(0.5f);
         Hiz = 3;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Top")
+            manager.Defeat();
     }
 }

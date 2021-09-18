@@ -9,6 +9,8 @@ TagManager:
   - EnemyHuman
   - EnemyGiant
   - Gecit
+  - Top
+  - DusmanKulesi
   layers:
   - Default
   - TransparentFX

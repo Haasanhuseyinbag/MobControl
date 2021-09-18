@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyHuman : MonoBehaviour
 {
     [SerializeField] float Hiz;
+    GameManager manager;
     void Start()
     {
         StartCoroutine(Yurume());
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void Update()
     {
@@ -18,5 +20,10 @@ public class EnemyHuman : MonoBehaviour
         Hiz = 10;
         yield return new WaitForSeconds(0.5f);
         Hiz = 3;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Top")
+            manager.Defeat();
     }
 }

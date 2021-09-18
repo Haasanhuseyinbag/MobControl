@@ -5,6 +5,11 @@ using UnityEngine;
 public class CloneHuman : MonoBehaviour
 {
     float Hiz = 3;
+    GameManager manager;
+    void Start()
+    {
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     void Update()
     {
         transform.Translate(Vector3.forward * Hiz * Time.deltaTime);
@@ -26,6 +31,11 @@ public class CloneHuman : MonoBehaviour
         else if (collision.gameObject.tag == "EnemyGiant")
         {
             collision.gameObject.GetComponent<EnemyGiant>().Healt -= 1;
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "DusmanKulesi")
+        {
+            collision.GetComponent<DusmanKulesi>().Healt--;
             Destroy(gameObject);
         }
     }

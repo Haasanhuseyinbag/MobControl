@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerHuman : MonoBehaviour
 {
     [SerializeField] float Hiz;
+    GameManager manager;
     void Start()
     {
         StartCoroutine(Yurume());
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void Update()
     {
@@ -36,6 +38,11 @@ public class PlayerHuman : MonoBehaviour
         else if (collision.gameObject.tag == "EnemyGiant")
         {
             collision.gameObject.GetComponent<EnemyGiant>().Healt -= 1;
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "DusmanKulesi")
+        {
+            collision.GetComponent<DusmanKulesi>().Healt--;
             Destroy(gameObject);
         }
     }
