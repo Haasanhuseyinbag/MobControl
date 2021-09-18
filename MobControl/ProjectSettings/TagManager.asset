@@ -8,6 +8,7 @@ TagManager:
   - PlayerGiant
   - EnemyHuman
   - EnemyGiant
+  - Gecit
   layers:
   - Default
   - TransparentFX

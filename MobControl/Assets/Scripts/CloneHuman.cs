@@ -2,22 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHuman : MonoBehaviour
+public class CloneHuman : MonoBehaviour
 {
-    [SerializeField] float Hiz;
-    void Start()
-    {
-        StartCoroutine(Yurume());
-    }
+    float Hiz = 3;
     void Update()
     {
         transform.Translate(Vector3.forward * Hiz * Time.deltaTime);
-    }
-    IEnumerator Yurume()
-    {
-        Hiz = 10;
-        yield return new WaitForSeconds(0.5f);
-        Hiz = 3;
     }
     private void OnTriggerEnter(Collider collision)
     {
