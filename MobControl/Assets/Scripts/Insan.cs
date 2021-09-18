@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Insan : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float Hiz;
     void Start()
     {
-        
+        StartCoroutine(Yurume());
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.forward * Hiz * Time.deltaTime);
+    }
+    IEnumerator Yurume()
+    {
+        Hiz = 7;
+        yield return new WaitForSeconds(0.5f);
+        Hiz = 2;
     }
 }

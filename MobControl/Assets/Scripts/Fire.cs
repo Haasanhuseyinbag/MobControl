@@ -11,7 +11,7 @@ public class Fire : MonoBehaviour
     float FireRateTimer;
     void Start()
     {
-        cannon.FireRate = 0.5f;
+        cannon.FireRate = 1f;
     }
     void Update()
     {
@@ -25,8 +25,8 @@ public class Fire : MonoBehaviour
     public void Shot()
     {
         if (AtilanInsanSayisi > 1 && AtilanInsanSayisi % 6 == 0)
-            Instantiate(Dev, RayPoint.position, transform.rotation);
+            Instantiate(Dev, RayPoint.position, Quaternion.identity);
         else
-            Instantiate(Insan, RayPoint.position, transform.rotation);
+            Instantiate(Insan, RayPoint.position, Quaternion.identity);
     }
 }
