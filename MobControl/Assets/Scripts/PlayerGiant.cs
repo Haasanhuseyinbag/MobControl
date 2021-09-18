@@ -16,7 +16,7 @@ public class PlayerGiant : MonoBehaviour
         if (Healt <= 0)
         {
             Destroy(gameObject);
-        }
+        }   
     }
     IEnumerator Yurume()
     {

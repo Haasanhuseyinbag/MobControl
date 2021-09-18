@@ -25,9 +25,13 @@ public class PlayerHuman : MonoBehaviour
         {
             int Ihtimal = Random.Range(0, 2);
             if (Ihtimal == 0)
+            {
                 Destroy(gameObject);
+            }
             else if (Ihtimal == 1)
+            {
                 Destroy(collision.gameObject);
+            }
         }
         else if (collision.gameObject.tag == "EnemyGiant")
         {
