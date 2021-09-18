@@ -9,8 +9,10 @@ public class Fire : MonoBehaviour
     CannonScript cannon = new CannonScript();
     int AtilanInsanSayisi = 0;
     float FireRateTimer;
+    Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         cannon.FireRate = 1f;
     }
     void Update()
@@ -24,6 +26,7 @@ public class Fire : MonoBehaviour
     }
     public void Shot()
     {
+        animator.Play("Fire");
         if (AtilanInsanSayisi > 1 && AtilanInsanSayisi % 6 == 0)
             Instantiate(Dev, RayPoint.position, Quaternion.identity);
         else
