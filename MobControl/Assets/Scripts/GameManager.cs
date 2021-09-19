@@ -1,17 +1,22 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    public Text text;
     public void Win()
     {
-        text.text = "WİN";
         Time.timeScale = 0;
     }
     public void Defeat()
     {
-        text.text = "DEFEAT";
         Time.timeScale = 0;
+    }
+    public void Game()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    public void OpenMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

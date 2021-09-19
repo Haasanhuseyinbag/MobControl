@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerHuman : MonoBehaviour
 {
     [SerializeField] float Hiz;
     GameManager manager;
+    NavMeshAgent agent;
+    GameObject DusmanKulesi;
     void Start()
     {
         StartCoroutine(Yurume());
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        DusmanKulesi = GameObject.Find("DusmanKulesi");
+        agent = GetComponent<NavMeshAgent>();
     }
     void Update()
     {
@@ -19,9 +24,9 @@ public class PlayerHuman : MonoBehaviour
     {
         Hiz = 10;
         yield return new WaitForSeconds(0.5f);
-        Hiz = 3;
+        Hiz = 4;
     }
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "EnemyHuman")
         {
@@ -35,15 +40,19 @@ public class PlayerHuman : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        else if (collision.gameObject.tag == "EnemyGiant")
+        if (collision.gameObject.tag == "EnemyGiant")
         {
             collision.gameObject.GetComponent<EnemyGiant>().Healt -= 1;
             Destroy(gameObject);
         }
         if (collision.gameObject.tag == "DusmanKulesi")
         {
-            collision.GetComponent<DusmanKulesi>().Healt--;
+            collision.gameObject.GetComponent<DusmanKulesi>().Healt--;
             Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "FinalCember")
+        {
+            agent.SetDestination(DusmanKulesi.transform.position);
         }
     }
 }

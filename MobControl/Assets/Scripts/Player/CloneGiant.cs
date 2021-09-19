@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerGiant : MonoBehaviour
+using UnityEngine.AI;
+public class CloneGiant : MonoBehaviour
 {
-    [SerializeField] float Hiz;
+    float Hiz = 4;
     public int Healt = 6;
     GameManager manager;
+    NavMeshAgent agent;
+    GameObject DusmanKulesi;
     void Start()
     {
-        StartCoroutine(Yurume());
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        DusmanKulesi = GameObject.Find("DusmanKulesi");
+        agent = GetComponent<NavMeshAgent>();
     }
     void Update()
     {
@@ -20,13 +23,7 @@ public class PlayerGiant : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    IEnumerator Yurume()
-    {
-        Hiz = 7;
-        yield return new WaitForSeconds(0.5f);
-        Hiz = 3;
-    }
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "EnemyHuman")
         {
@@ -35,7 +32,7 @@ public class PlayerGiant : MonoBehaviour
         }
         else if (collision.gameObject.tag == "EnemyGiant")
         {
-            int Ihtimal = Random.Range(0, 1);
+            int Ihtimal = Random.Range(0, 2);
             if (Ihtimal == 0)
             {
                 collision.gameObject.GetComponent<EnemyGiant>().Healt -= 3;
@@ -49,8 +46,12 @@ public class PlayerGiant : MonoBehaviour
         }
         if (collision.gameObject.tag == "DusmanKulesi")
         {
-            collision.GetComponent<DusmanKulesi>().Healt -= 5;
+            collision.gameObject.GetComponent<DusmanKulesi>().Healt -= 5;
             Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "FinalCember")
+        {
+            agent.SetDestination(DusmanKulesi.transform.position);
         }
     }
 }

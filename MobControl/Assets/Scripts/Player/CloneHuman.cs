@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class CloneHuman : MonoBehaviour
 {
-    float Hiz = 3;
+    float Hiz = 4;
     GameManager manager;
+    NavMeshAgent agent;
+    GameObject DusmanKulesi;
     void Start()
     {
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        DusmanKulesi = GameObject.Find("DusmanKulesi");
+        agent = GetComponent<NavMeshAgent>();
     }
     void Update()
     {
         transform.Translate(Vector3.forward * Hiz * Time.deltaTime);
     }
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "EnemyHuman")
         {
@@ -35,8 +39,12 @@ public class CloneHuman : MonoBehaviour
         }
         if (collision.gameObject.tag == "DusmanKulesi")
         {
-            collision.GetComponent<DusmanKulesi>().Healt--;
+            collision.gameObject.GetComponent<DusmanKulesi>().Healt--;
             Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "FinalCember")
+        {
+            agent.SetDestination(DusmanKulesi.transform.position);
         }
     }
 }

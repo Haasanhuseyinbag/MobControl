@@ -19,11 +19,11 @@ public class EnemyHuman : MonoBehaviour
     {
         Hiz = 10;
         yield return new WaitForSeconds(0.5f);
-        Hiz = 3;
+        Hiz = 4;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Top")
+        if (collision.gameObject.tag == "Top")
             manager.Defeat();
     }
 }
