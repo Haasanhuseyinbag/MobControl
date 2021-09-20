@@ -1895,7 +1895,7 @@ GameObject:
   - component: {fileID: 7862076723258051778}
   - component: {fileID: 2227576533187652183}
   - component: {fileID: 5413946740138745578}
-  - component: {fileID: 4672278750189323602}
+  - component: {fileID: -364404793507397278}
   m_Layer: 0
   m_Name: CloneHuman
   m_TagString: Untagged
@@ -1972,15 +1972,15 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7862076723258051805}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 100
+  m_Drag: 1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!195 &4672278750189323602
+  m_CollisionDetection: 2
+--- !u!195 &-364404793507397278
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2001,7 +2001,7 @@ NavMeshAgent:
   m_Height: 1.8
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 2
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7989346511723442054
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class DusmanKulesi : MonoBehaviour
     GameManager manager;
     private void Start()
     {
+        Time.timeScale = 1;
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void Update()

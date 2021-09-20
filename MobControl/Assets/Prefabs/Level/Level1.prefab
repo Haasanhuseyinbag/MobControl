@@ -152,8 +152,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.9900318, y: 2, z: 2}
+  m_Center: {x: -0.00006375313, y: 1.1413263e-25, z: -3.0399856e-11}
 --- !u!1 &3294333639229474698
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8083817318678661213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 627013402072352631}
@@ -527,7 +527,7 @@ PrefabInstance:
     - target: {fileID: 8827859316748849855, guid: afce64e09958e954e86a4684307242e0,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afce64e09958e954e86a4684307242e0, type: 3}
@@ -607,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 8827859316748849855, guid: afce64e09958e954e86a4684307242e0,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afce64e09958e954e86a4684307242e0, type: 3}
@@ -772,7 +772,7 @@ PrefabInstance:
     - target: {fileID: 8827859316748849855, guid: afce64e09958e954e86a4684307242e0,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afce64e09958e954e86a4684307242e0, type: 3}
