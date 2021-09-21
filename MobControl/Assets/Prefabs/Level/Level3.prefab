@@ -132,66 +132,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5100854646645484670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5100854646645484657}
-  m_Layer: 0
-  m_Name: Raypoint (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5100854646645484657
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5100854646645484670}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.5, z: -0.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4989694729410629559}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5100854647347175534
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5100854647347175521}
-  m_Layer: 0
-  m_Name: Raypoint (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5100854647347175521
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5100854647347175534}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -0.5, z: -0.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4989694729410629559}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5295054794052105596
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,12 +625,12 @@ PrefabInstance:
         type: 3}
       propertyPath: RayPoint1
       value: 
-      objectReference: {fileID: 5100854647347175521}
+      objectReference: {fileID: 5369304191258650452}
     - target: {fileID: 285719837110034480, guid: 5aa2b7c7ff444bb44a3d9446767a760d,
         type: 3}
       propertyPath: RayPoint2
       value: 
-      objectReference: {fileID: 5100854646645484657}
+      objectReference: {fileID: 5369304191893236548}
     - target: {fileID: 285719837110034480, guid: 5aa2b7c7ff444bb44a3d9446767a760d,
         type: 3}
       propertyPath: FireRateMax
@@ -759,18 +699,30 @@ PrefabInstance:
     - target: {fileID: 885654348713870528, guid: 5aa2b7c7ff444bb44a3d9446767a760d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 885654349419497680, guid: 5aa2b7c7ff444bb44a3d9446767a760d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aa2b7c7ff444bb44a3d9446767a760d, type: 3}
 --- !u!4 &4989694729410629559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 285719837110034483, guid: 5aa2b7c7ff444bb44a3d9446767a760d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5100854648119570308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5369304191258650452 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 885654349419497680, guid: 5aa2b7c7ff444bb44a3d9446767a760d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5100854648119570308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5369304191893236548 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 885654348713870528, guid: 5aa2b7c7ff444bb44a3d9446767a760d,
     type: 3}
   m_PrefabInstance: {fileID: 5100854648119570308}
   m_PrefabAsset: {fileID: 0}

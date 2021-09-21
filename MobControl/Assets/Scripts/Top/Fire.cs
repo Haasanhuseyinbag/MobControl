@@ -13,7 +13,6 @@ public class Fire : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        cannon.FireRate = 1f;
     }
     void Update()
     {

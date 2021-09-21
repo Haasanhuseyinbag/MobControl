@@ -3,10 +3,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject KazanmaEkrani, KaybetmeEkrani;
-    [SerializeField] int RaundSayisi;
+    [SerializeField] GameObject KazanmaEkrani, KaybetmeEkrani, Menu, Score;
+    [SerializeField] public int KazanilanRaundSayisi = 0;
     [SerializeField] Text text, text2, SkorText;
     GameSkor Skor;
+    public int Seviye;
     private void Start()
     {
         Skor = GameObject.Find("GameSkor").GetComponent<GameSkor>();
@@ -17,47 +18,55 @@ public class GameManager : MonoBehaviour
     }
     public void Win()
     {
+        Score.SetActive(false);
+        Menu.SetActive(false);
+        Time.timeScale = 0;
         KazanmaEkrani.SetActive(true);
-        Time.timeScale = 0;
-        RaundSayisi++;
-        if (3 <= RaundSayisi)
+        if (KazanilanRaundSayisi < 3)
         {
-            text.text = "Menu";
-            text2.text = "Seviyeyi Geçtin";
+            KazanilanRaundSayisi += 1;
         }
-    }
-    public void Defeat()
-    {
-        KaybetmeEkrani.SetActive(true);
-        Time.timeScale = 0;
-        RaundSayisi = 0;
-    }
-    public void OpenMenu()
-    {
-        KazanmaEkrani.SetActive(false);
-        KaybetmeEkrani.SetActive(false);
-        SceneManager.LoadScene("Menu");
+        else if (KazanilanRaundSayisi >= 3)
+        {
+            text2.text = "Seviyeyi Geçtin";
+            text.text = "MENÜ";
+        }
     }
     public void SonrakiSeviye()
     {
         KazanmaEkrani.SetActive(false);
         KaybetmeEkrani.SetActive(false);
-        if (RaundSayisi < 3)
+        if (KazanilanRaundSayisi >= 3)
         {
-            SceneManager.LoadScene("Game");
-            Time.timeScale = 1;
-        }
-        if (3 <= RaundSayisi)
-        {
-            Skor.LevelSonu();
             OpenMenu();
         }
+        else if (KazanilanRaundSayisi < 3)
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Game");
+        }
+    }
+    public void Defeat()
+    {
+        Score.SetActive(false);
+        Menu.SetActive(false);
+        KaybetmeEkrani.SetActive(true);
+        Time.timeScale = 0;
+        KazanilanRaundSayisi = 0;
+    }
+    public void OpenMenu()
+    {
+        KazanilanRaundSayisi = 0;
+        KazanmaEkrani.SetActive(false);
+        KaybetmeEkrani.SetActive(false);
+        SceneManager.LoadScene("Menu");
     }
     public void Restart()
     {
-        SceneManager.LoadScene("Game");
         KazanmaEkrani.SetActive(false);
         KaybetmeEkrani.SetActive(false);
         Time.timeScale = 1;
+        KazanilanRaundSayisi = 0;
+        SceneManager.LoadScene("Game");
     }
 }

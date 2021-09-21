@@ -4,8 +4,4 @@ using UnityEngine.SceneManagement;
 public class GameSkor : MonoBehaviour
 {
     public int Skor, Para;
-    public void LevelSonu()
-    {
-        Para += Skor;
-    }
 }

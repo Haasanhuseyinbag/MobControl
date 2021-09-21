@@ -20,18 +20,13 @@ public class DusmanKulesi : MonoBehaviour
     }
     void Update()
     {
-            HealtText.text = Healt.ToString();
-            if (Healt <= 0)
-            {
-                manager.Win();
-                HealtText.text = "0";
-            }
-            if (Time.time > FireRateTimer)
-            {
-                Shot();
-                AtilanInsanSayisi++;
-                FireRateTimer = Time.time + FireRate;
-            }
+        HealtText.text = Healt.ToString();
+        if (Time.time > FireRateTimer)
+        {
+            Shot();
+            AtilanInsanSayisi++;
+            FireRateTimer = Time.time + FireRate;
+        }
     }
     public void Shot()
     {
@@ -50,5 +45,13 @@ public class DusmanKulesi : MonoBehaviour
         }
         FireRate = Random.Range(FireRateMin, FireRateMax);
         DevAtilmaZamani = Random.Range(7, 10);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (Healt <= 0)
+        {
+            HealtText.text = "0";
+            manager.Win();
+        }
     }
 }

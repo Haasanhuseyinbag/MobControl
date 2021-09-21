@@ -1008,10 +1008,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KazanmaEkrani: {fileID: 1866231844}
   KaybetmeEkrani: {fileID: 370840610}
-  RaundSayisi: 0
+  Menu: {fileID: 627400964}
+  Score: {fileID: 1153267090}
+  KazanilanRaundSayisi: 0
   text: {fileID: 308687291}
   text2: {fileID: 362356406}
   SkorText: {fileID: 2060830278}
+  Seviye: 0
 --- !u!1 &1451105832
 GameObject:
   m_ObjectHideFlags: 0

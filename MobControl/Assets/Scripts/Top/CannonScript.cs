@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class CannonScript
 {
-    public float FireRate { get; set; }
+    public float FireRate = 1f;
 }
