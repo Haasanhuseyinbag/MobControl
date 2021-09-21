@@ -5,13 +5,22 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject KazanmaEkrani, KaybetmeEkrani;
     [SerializeField] int RaundSayisi;
-    [SerializeField] Text text,text2;
+    [SerializeField] Text text, text2, SkorText;
+    GameSkor Skor;
+    private void Start()
+    {
+        Skor = GameObject.Find("GameSkor").GetComponent<GameSkor>();
+    }
+    private void Update()
+    {
+        SkorText.text = Skor.Skor.ToString();
+    }
     public void Win()
     {
         KazanmaEkrani.SetActive(true);
         Time.timeScale = 0;
         RaundSayisi++;
-        if (RaundSayisi >= 3)
+        if (3 <= RaundSayisi)
         {
             text.text = "Menu";
             text2.text = "Seviyeyi Geçtin";
@@ -25,9 +34,9 @@ public class GameManager : MonoBehaviour
     }
     public void OpenMenu()
     {
-        SceneManager.LoadScene("Menu");
         KazanmaEkrani.SetActive(false);
         KaybetmeEkrani.SetActive(false);
+        SceneManager.LoadScene("Menu");
     }
     public void SonrakiSeviye()
     {
@@ -38,8 +47,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("Game");
             Time.timeScale = 1;
         }
-        if (RaundSayisi >= 3)
+        if (3 <= RaundSayisi)
         {
+            Skor.LevelSonu();
             OpenMenu();
         }
     }

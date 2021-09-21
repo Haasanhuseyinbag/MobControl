@@ -6,13 +6,13 @@ using UnityEngine.AI;
 public class PlayerHuman : MonoBehaviour
 {
     [SerializeField] float Hiz;
-    GameManager manager;
+    GameSkor manager;
     NavMeshAgent agent;
     GameObject DusmanKulesi;
     void Start()
     {
         StartCoroutine(Yurume());
-        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        manager = GameObject.Find("GameSkor").GetComponent<GameSkor>();
         DusmanKulesi = GameObject.Find("DusmanKulesi");
         agent = GetComponent<NavMeshAgent>();
     }
@@ -38,6 +38,7 @@ public class PlayerHuman : MonoBehaviour
             else if (Ihtimal == 1)
             {
                 Destroy(collision.gameObject);
+                manager.Skor += 1;
             }
         }
         if (collision.gameObject.tag == "EnemyGiant")

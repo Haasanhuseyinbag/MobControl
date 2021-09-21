@@ -7,13 +7,13 @@ public class PlayerGiant : MonoBehaviour
 {
     [SerializeField] float Hiz;
     public int Healt = 6;
-    GameManager manager;
+    GameSkor manager;
     NavMeshAgent agent;
     GameObject DusmanKulesi;
     void Start()
     {
         StartCoroutine(Yurume());
-        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        manager = GameObject.Find("GameSkor").GetComponent<GameSkor>();
         DusmanKulesi = GameObject.Find("DusmanKulesi");
         agent = GetComponent<NavMeshAgent>();
     }
@@ -37,6 +37,7 @@ public class PlayerGiant : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Healt -= 1;
+            manager.Skor += 1;
         }
         else if (collision.gameObject.tag == "EnemyGiant")
         {
@@ -50,6 +51,7 @@ public class PlayerGiant : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 Healt -= 3;
+                manager.Skor += 5;
             }
         }
         if (collision.gameObject.tag == "DusmanKulesi")

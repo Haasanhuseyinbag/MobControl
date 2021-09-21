@@ -6,12 +6,12 @@ public class CloneGiant : MonoBehaviour
 {
     float Hiz = 4;
     public int Healt = 6;
-    GameManager manager;
+    GameSkor Skor;
     NavMeshAgent agent;
     GameObject DusmanKulesi;
     void Start()
     {
-        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Skor = GameObject.Find("GameSkor").GetComponent<GameSkor>();
         DusmanKulesi = GameObject.Find("DusmanKulesi");
         agent = GetComponent<NavMeshAgent>();
     }
@@ -29,6 +29,7 @@ public class CloneGiant : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Healt -= 1;
+            Skor.Skor += 1;
         }
         else if (collision.gameObject.tag == "EnemyGiant")
         {
@@ -42,6 +43,7 @@ public class CloneGiant : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 Healt -= 3;
+                Skor.Skor += 5;
             }
         }
         if (collision.gameObject.tag == "DusmanKulesi")
