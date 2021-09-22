@@ -517,6 +517,8 @@ MonoBehaviour:
   Insan: {fileID: 7862076723258051805, guid: 4b978bcda0d241945bfed1f90e8d622d, type: 3}
   Dev: {fileID: 7862076723258051805, guid: 97461e8fe9160bf4183b5fb2ea8e5ddd, type: 3}
   RayPoint: {fileID: 1751567938255550384}
+  FireRateTimer: 0
+  FireRate: 1
 --- !u!95 &6128304159751089889
 Animator:
   serializedVersion: 3

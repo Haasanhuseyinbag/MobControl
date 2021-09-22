@@ -3,5 +3,5 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameSkor : MonoBehaviour
 {
-    public int Skor, Para;
+    public int Skor;
 }

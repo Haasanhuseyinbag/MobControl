@@ -7,16 +7,19 @@ public class EnemyGiant : MonoBehaviour
     [SerializeField] float Hiz;
     public int Healt = 6;
     GameManager manager;
+    GameSkor Skor;
     void Start()
     {
         StartCoroutine(Yurume());
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Skor = GameObject.Find("GameSkor").GetComponent<GameSkor>();
     }
     void Update()
     {
         transform.Translate(Vector3.forward * Hiz * Time.deltaTime);
         if (Healt <= 0)
         {
+            Skor.Skor += 5;
             Destroy(gameObject);
         }
     }

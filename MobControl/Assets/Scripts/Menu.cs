@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Menu : MonoBehaviour
 {
-    [SerializeField] Text ParaText;
+    [SerializeField] Text ParaText, LevelText;
     GameSkor Skor;
     private void Start()
     {
@@ -13,11 +13,14 @@ public class Menu : MonoBehaviour
     }
     private void Update()
     {
-        ParaText.text = Skor.Para.ToString();
-        if (Input.GetMouseButtonDown(0))
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("Game");
-        }
+        ParaText.text = PlayerPrefs.GetInt("Para").ToString();
+        LevelText.text = "LEVEL - " + PlayerPrefs.GetInt("Seviye").ToString();
+    }
+    public void Acil()
+    {
+        PlayerPrefs.SetInt("Skor", 0);
+        PlayerPrefs.SetInt("RaundSayisi", 0);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Game");
     }
 }

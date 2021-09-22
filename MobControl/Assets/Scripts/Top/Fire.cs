@@ -6,9 +6,8 @@ public class Fire : MonoBehaviour
 {
     [SerializeField] GameObject Insan, Dev;
     [SerializeField] Transform RayPoint;
-    CannonScript cannon = new CannonScript();
     int AtilanInsanSayisi = 0;
-    float FireRateTimer;
+    float FireRateTimer, FireRate = 1;
     Animator animator;
     void Start()
     {
@@ -20,7 +19,7 @@ public class Fire : MonoBehaviour
         {
             Shot();
             AtilanInsanSayisi++;
-            FireRateTimer = Time.time + cannon.FireRate;
+            FireRateTimer = Time.time + FireRate;
         }
     }
     public void Shot()

@@ -601,7 +601,9 @@ PrefabInstance:
       propertyPath: KlonSayisi
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 702512843490807910, guid: 196836a296156334aaeff24c20047a0b, type: 3}
+    - {fileID: 702512845176993143, guid: 196836a296156334aaeff24c20047a0b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 196836a296156334aaeff24c20047a0b, type: 3}
 --- !u!4 &5725821096389379892 stripped
 Transform:
@@ -878,7 +880,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 702512843490807910, guid: 196836a296156334aaeff24c20047a0b, type: 3}
+    - {fileID: 702512845176993143, guid: 196836a296156334aaeff24c20047a0b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 196836a296156334aaeff24c20047a0b, type: 3}
 --- !u!4 &5725821096220171610 stripped
 Transform:

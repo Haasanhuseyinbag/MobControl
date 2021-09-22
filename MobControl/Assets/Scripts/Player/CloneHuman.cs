@@ -33,7 +33,7 @@ public class CloneHuman : MonoBehaviour
                 manager.Skor += 1;
             }
         }
-        else if (collision.gameObject.tag == "EnemyGiant")
+        if (collision.gameObject.tag == "EnemyGiant")
         {
             collision.gameObject.GetComponent<EnemyGiant>().Healt -= 1;
             Destroy(gameObject);
